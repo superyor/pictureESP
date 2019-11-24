@@ -13,7 +13,12 @@ Lua extention for the AIMWARE.net CS:GO client that draws a picture as ESP over 
   * Added "Hot Girl"
   * Added "Rias Gremory"
   * Added "Donald Trump
-
+ 
+ ###### [Release 1.1.1] ######
+* Added more pictures.
+  * Added "Actual Nick Furry"
+  * Added "Elon Musk 2"
+  
 ## Contact: ##
 * E-Mail: superyu.development@gmail.com
 * Discord: superyu'#7167
