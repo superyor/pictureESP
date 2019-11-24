@@ -1,5 +1,5 @@
 --- GUI Stuff
-local pos = gui.Reference("MISC", "General", "Main")
+local pos = gui.Reference("VISUALS", "Shared")
 local enable = gui.Checkbox( pos, "msc_picture_esp_active", "Enable Picture ESP", 0)
 local picture = gui.Combobox( pos, "msc_picture_esp_type", "Picture", "Nick Furry", "Elon Musk", "XaNe")
 
