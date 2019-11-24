@@ -22,7 +22,7 @@ local function update()
         imageLink = "https://i.ytimg.com/vi/hEDYqAAL_48/hqdefault.jpg"
     elseif picture:GetValue() == 3 then
         imageLink = "https://images.vectorhq.com/images/previews/dfa/girl-with-big-ass-psd-407902.png"
-    elseif icture:GetValue() == 4
+    elseif picture:GetValue() == 4 then
         imageLink = "https://cdn.imgbin.com/1/9/9/imgbin-rias-gremory-high-school-dxd-12-heroes-of-tutoring-character-devil-red-haired-female-schoolgirl-anime-character-FJE0dgeq76530935U7ayuRG0p.jpg"
     else
         imageLink = "https://purepng.com/public/uploads/large/purepng.com-donald-trumpdonald-trumpdonaldtrumppresidentpoliticsbusinessmanborn-in-queens-1701528042636xgni1.png"
@@ -59,7 +59,7 @@ end)
 local SCRIPT_FILE_NAME = GetScriptName();
 local SCRIPT_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/Picture%20ESP.lua";
 local VERSION_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/version.txt"; --- in case of update i need to update this. (Note by superyu'#7167 "so i don't forget it.")
-local VERSION_NUMBER = "1.1.0"; --- This too
+local VERSION_NUMBER = "1.1.0a"; --- This too
 local version_check_done = false;
 local update_downloaded = false;
 local update_available = false;
