@@ -7,9 +7,9 @@ local customLink = gui.Editbox( pos, "msc_picture_esp_custom_link", "Custom Link
 
 --- Variables
 local x1, y1, x2, y2;
-local imageLink = "https://pics.me.me/nick-furry-gag-priel8-nick-furys-true-form-44429196.png"
+local imageLink = "https://i.imgur.com/a3Js0C3.jpg"
 local imageData = http.Get(imageLink);
-local imgRGBA, imgWidth, imgHeight = common.DecodePNG(imageData);
+local imgRGBA, imgWidth, imgHeight = common.DecodeJPEG(imageData);
 local texture = draw.CreateTexture(imgRGBA, imgWidth, imgHeight)
 
 --- Update Function for the button.
