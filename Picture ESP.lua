@@ -1,8 +1,9 @@
 --- GUI Stuff
 local pos = gui.Reference("VISUALS", "Shared")
 local enable = gui.Checkbox( pos, "msc_picture_esp_active", "Enable Picture ESP", 0)
-local picture = gui.Combobox( pos, "msc_picture_esp_type", "Picture", "Nick Furry", "Actual Nick Furry", "Elon Musk", "Elon Musk 2" ,"XaNe", "Hot Girl", "Rias Gremory", "Donald Trump")
-
+local picture = gui.Combobox( pos, "msc_picture_esp_type", "Picture", "Nick Furry", "Actual Nick Furry", "Elon Musk", "Elon Musk 2" ,"XaNe", "Hot Girl", "Rias Gremory", "Donald Trump", "Custom")
+local customType = gui.Combobox( pos, "msc_picture_esp_custom_type", "Image Hoster", "Imgur")
+local customLink = gui.Editbox( pos, "msc_picture_esp_custom_link", "Custom Link")
 
 --- Variables
 local x1, y1, x2, y2;
@@ -28,8 +29,16 @@ local function update()
         imageLink = "https://images.vectorhq.com/images/previews/dfa/girl-with-big-ass-psd-407902.png"
     elseif picture:GetValue() == 6 then
         imageLink = "https://i.imgur.com/O5mew0e.png"
-    else
+    elseif picture:GetValue() == 7 then
         imageLink = "https://purepng.com/public/uploads/large/purepng.com-donald-trumpdonald-trumpdonaldtrumppresidentpoliticsbusinessmanborn-in-queens-1701528042636xgni1.png"
+    else
+        if customType:GetValue() == 0 then
+            imageLink = "https://i.imgur.com/" .. customLink:GetValue()
+        end
+    end
+
+    if not imageLink then
+        return
     end
 
     imageData = http.Get(imageLink);
@@ -63,7 +72,7 @@ end)
 local SCRIPT_FILE_NAME = GetScriptName();
 local SCRIPT_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/Picture%20ESP.lua";
 local VERSION_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/version.txt"; --- in case of update i need to update this. (Note by superyu'#7167 "so i don't forget it.")
-local VERSION_NUMBER = "1.1.1"; --- This too
+local VERSION_NUMBER = "1.1.2"; --- This too
 local version_check_done = false;
 local update_downloaded = false;
 local update_available = false;
