@@ -1,9 +1,9 @@
 --- GUI Stuff
-local pos = gui.Reference("VISUALS", "Shared")
-local enable = gui.Checkbox( pos, "msc_picture_esp_active", "Enable Picture ESP", 0)
-local picture = gui.Combobox( pos, "msc_picture_esp_type", "Picture", "Nick Furry", "Actual Nick Furry", "Elon Musk", "Elon Musk 2" ,"XaNe", "Hot Girl", "Rias Gremory", "Donald Trump", "Custom")
-local customType = gui.Combobox( pos, "msc_picture_esp_custom_type", "Image Hoster", "Imgur")
-local customLink = gui.Editbox( pos, "msc_picture_esp_custom_link", "Custom Link")
+local pos = gui.Reference("VISUALS", "Overlay", "Enemy")
+local enable = gui.Checkbox( pos, "esp.picture.enemy.active", "Enable Picture ESP", 0)
+local picture = gui.Combobox( pos, "esp.picture.enemy.type", "Picture", "Nick Furry", "Actual Nick Furry", "Elon Musk", "Elon Musk 2" ,"XaNe", "Hot Girl", "Rias Gremory", "Donald Trump", "Custom")
+local customType = gui.Combobox( pos, "esp.picture.enemy.customtype", "Image Hoster", "Imgur")
+local customLink = gui.Editbox( pos, "esp.picture.enemy.customlink", "Custom Link")
 
 --- Variables
 local x1, y1, x2, y2;
@@ -72,7 +72,7 @@ end)
 local SCRIPT_FILE_NAME = GetScriptName();
 local SCRIPT_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/Picture%20ESP.lua";
 local VERSION_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/version.txt"; --- in case of update i need to update this. (Note by superyu'#7167 "so i don't forget it.")
-local VERSION_NUMBER = "1.1.2"; --- This too
+local VERSION_NUMBER = "1.2"; --- This too
 local version_check_done = false;
 local update_downloaded = false;
 local update_available = false;
