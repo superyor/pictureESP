@@ -59,9 +59,12 @@ local updatebutton = gui.Button(pos, "Update ESP", update)
 callbacks.Register("DrawESP", function(builder)
 
     if enable:GetValue() then
-        x1, y1, x2, y2 = builder:GetRect()
-        draw.SetTexture(texture)
-        draw.FilledRect(x1, y1, x2, y2)
+        local builderEntity = builder:GetEntity()
+        if builderEntity:IsPlayer() and builderEntity:IsAlive() and builderEntity:GetTeamNumber() ~= entities.GetLocalPlayer():GetTeamNumber() then
+            x1, y1, x2, y2 = builder:GetRect()
+            draw.SetTexture(texture)
+            draw.FilledRect(x1, y1, x2, y2)
+        end
     end
     
 end)
@@ -72,14 +75,14 @@ end)
 local SCRIPT_FILE_NAME = GetScriptName();
 local SCRIPT_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/Picture%20ESP.lua";
 local VERSION_FILE_ADDR = "https://raw.githubusercontent.com/superyor/pictureESP/master/version.txt"; --- in case of update i need to update this. (Note by superyu'#7167 "so i don't forget it.")
-local VERSION_NUMBER = "1.3"; --- This too
+local VERSION_NUMBER = "1.4"; --- This too
 local version_check_done = false;
 local update_downloaded = false;
 local update_available = false;
 
 --- Auto Updater GUI Stuff
 local PICTUREESP_UPDATER_TAB = gui.Tab(gui.Reference("Settings"), "PictureESP.updater.tab", "PictureESP Autoupdater")
-local PICTUREESP_UPDATER_GROUP = gui.Groupbox(PICTUREESP_UPDATER_TAB, "Auto Updater for PictureESP™ | v" .. VERSION_NUMBER, 15, 15, 600, 600)
+local PICTUREESP_UPDATER_GROUP = gui.Groupbox(PICTUREESP_UPDATER_TAB, "Auto Updater for PictureESP™ | v" .. VERSION_NUMBER, 15, 15, 500, 500)
 local PICTUREESP_UPDATER_TEXT = gui.Text(PICTUREESP_UPDATER_GROUP, "")
 
 --- Auto updater by ShadyRetard/Shady#0001
